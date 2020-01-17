@@ -1,0 +1,19 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Helm
+      run: |
+        curl -LOsS https://get.helm.sh/helm-v3.0.1-linux-amd64.tar.gz
+        tar -zxvf helm-v3.0.1-linux-amd64.tar.gz
+        sudo install -m 755 -D linux-amd64/helm /usr/local/bin
+    - name: Packaging
+      run: |
+        helm package charts/*/ -d docs
