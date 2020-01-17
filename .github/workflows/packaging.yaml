@@ -1,8 +1,9 @@
 name: Packaging
 
 on:
-  pull_request:
-    types: [closed]
+  push:
+    branches: 
+      - master
 
 jobs:
   build:
@@ -21,10 +22,9 @@ jobs:
     - name: Update index.yaml
       run: helm repo index docs --url https://mz-trial.github.io/sample-01/
     - uses: stefanzweifel/git-auto-commit-action@v2.5.0
-      if: github.pull_request.merged == 'true'
       with:
         commit_message: Update charts
-        branch: ${{ github.github_ref }}
+        branch: master
         file_pattern: docs/*
         repository: .
       env:
