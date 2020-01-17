@@ -1,6 +1,11 @@
-name: CI
+name: Packaging
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+    paths-ignore: 
+      - 'docs/**'
 
 jobs:
   build:
@@ -17,3 +22,13 @@ jobs:
     - name: Packaging
       run: |
         helm package charts/*/ -d docs
+    - name: Update index.yaml
+        helm repo index docs -- url https://mz-trial.github.io/sample-01/
+    - uses: stefanzweifel/git-auto-commit-action@v2.5.0
+      with:
+        commit_message: Update charts
+        branch: ${{ github.head_ref }}
+        file_pattern: docs/\*
+        repository: .
+      env:
+        GITHUB_TOKEN: ${{ secrets.SAMPLE_TOKEN }}
