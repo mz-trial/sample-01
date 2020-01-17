@@ -1,11 +1,8 @@
 name: Packaging
 
 on:
-  push:
-#    branches:
-#      - master
-    paths-ignore: 
-      - 'docs/**'
+  pull_request:
+    types: [closed]
 
 jobs:
   build:
@@ -24,9 +21,10 @@ jobs:
     - name: Update index.yaml
       run: helm repo index docs --url https://mz-trial.github.io/sample-01/
     - uses: stefanzweifel/git-auto-commit-action@v2.5.0
+      if: github.pull_request.merged == 'true'
       with:
         commit_message: Update charts
-        branch: feature-add_mynginx_chart
+        branch: ${{ github.github_ref }}
         file_pattern: docs/*
         repository: .
       env:
