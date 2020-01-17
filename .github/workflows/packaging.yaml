@@ -27,7 +27,7 @@ jobs:
       with:
         commit_message: Update charts
         branch: ${{ github.head_ref }}
-        file_pattern: docs/\*
+        file_pattern: .
         repository: .
       env:
         GITHUB_TOKEN: ${{ secrets.SAMPLE_TOKEN }}
