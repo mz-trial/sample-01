@@ -26,7 +26,7 @@ jobs:
     - uses: stefanzweifel/git-auto-commit-action@v2.5.0
       with:
         commit_message: Update charts
-        branch: ${{ github.head_ref }}
+        branch: feature-add_mynginx_chart
         file_pattern: docs/*
         repository: .
       env:
