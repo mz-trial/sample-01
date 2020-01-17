@@ -1,0 +1,31 @@
+name: Packaging
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Helm
+      run: |
+        curl -LOsS https://get.helm.sh/helm-v3.0.1-linux-amd64.tar.gz
+        tar -zxvf helm-v3.0.1-linux-amd64.tar.gz
+        sudo install -m 755 -D linux-amd64/helm /usr/local/bin
+    - name: Packaging
+      run: helm package charts/*/ -d docs
+    - name: Update index.yaml
+      run: helm repo index docs --url https://mz-trial.github.io/sample-01/
+    - uses: stefanzweifel/git-auto-commit-action@v2.5.0
+      if: github.pull_request.merged == 'true'
+      with:
+        commit_message: Update charts
+        branch: ${{ github.github_ref }}
+        file_pattern: docs/*
+        repository: .
+      env:
+        GITHUB_TOKEN: ${{ secrets.SAMPLE_TOKEN }}
