@@ -3,7 +3,16 @@ entries:
   mynginx:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-17T12:35:32.562163413+09:00"
+    created: "2020-01-17T05:44:35.791436724Z"
+    description: A Helm chart for Kubernetes
+    digest: 7198b72d2d83604ea8f545393bfec4de4a90282e7d0681550a66a015c2fa4dea
+    name: mynginx
+    urls:
+    - https://mz-trial.github.io/sample-01/mynginx-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-01-17T05:44:35.790725023Z"
     description: A Helm chart for Kubernetes
     digest: 402815146dbcfc9d6a95fb7b1f8906dfc30c66d3cc45e7e59794b461d28b0298
     name: mynginx
@@ -12,11 +21,11 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-17T12:35:32.559739736+09:00"
+    created: "2020-01-17T05:44:35.790365323Z"
     description: A Helm chart for Kubernetes
     digest: f27e6b7ab8b4b51dafb299da00ba7454ad82fdb12fd33db6982c98a022cd939e
     name: mynginx
     urls:
     - https://mz-trial.github.io/sample-01/mynginx-0.1.0.tgz
     version: 0.1.0
-generated: "2020-01-17T12:35:32.557228383+09:00"
+generated: "2020-01-17T05:44:35.789430422Z"
