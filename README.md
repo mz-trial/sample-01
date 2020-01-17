@@ -1,2 +1,2 @@
 # sample-01
-dev trial repo
+dev trial repository
