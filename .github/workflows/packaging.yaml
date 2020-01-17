@@ -20,10 +20,9 @@ jobs:
         tar -zxvf helm-v3.0.1-linux-amd64.tar.gz
         sudo install -m 755 -D linux-amd64/helm /usr/local/bin
     - name: Packaging
-      run: |
-        helm package charts/*/ -d docs
+      run: helm package charts/*/ -d docs
     - name: Update index.yaml
-        helm repo index docs -- url https://mz-trial.github.io/sample-01/
+      run: helm repo index docs -- url https://mz-trial.github.io/sample-01/
     - uses: stefanzweifel/git-auto-commit-action@v2.5.0
       with:
         commit_message: Update charts
