@@ -1,9 +1,19 @@
 apiVersion: v1
 entries:
+  myambassador:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-01-17T07:33:21.899983599Z"
+    description: A Helm chart for Kubernetes
+    digest: d4d0a3a4082063aad6f69ff7594141b249be62058877e9dd716b3a5fb7447092
+    name: myambassador
+    urls:
+    - https://mz-trial.github.io/sample-01/myambassador-0.1.0.tgz
+    version: 0.1.0
   mynginx:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-17T06:59:52.809070719Z"
+    created: "2020-01-17T07:33:21.9004615Z"
     description: A Helm chart for Kubernetes
     digest: 7198b72d2d83604ea8f545393bfec4de4a90282e7d0681550a66a015c2fa4dea
     name: mynginx
@@ -12,7 +22,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-17T06:59:52.808602422Z"
+    created: "2020-01-17T07:33:21.9002792Z"
     description: A Helm chart for Kubernetes
     digest: 402815146dbcfc9d6a95fb7b1f8906dfc30c66d3cc45e7e59794b461d28b0298
     name: mynginx
@@ -21,11 +31,11 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-17T06:59:52.808343723Z"
+    created: "2020-01-17T07:33:21.900138699Z"
     description: A Helm chart for Kubernetes
     digest: f27e6b7ab8b4b51dafb299da00ba7454ad82fdb12fd33db6982c98a022cd939e
     name: mynginx
     urls:
     - https://mz-trial.github.io/sample-01/mynginx-0.1.0.tgz
     version: 0.1.0
-generated: "2020-01-17T06:59:52.807953126Z"
+generated: "2020-01-17T07:33:21.899660398Z"
